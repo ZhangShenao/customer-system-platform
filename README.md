@@ -1,12 +1,25 @@
-# customer-system-monolith
+# customer-system-platform
 
-## 客服系统单体架构
+## 客服系统平台
 
 ### 核心模块说明
 
-- cs-dependency：统一依赖管理模块
-- cs-infrastructure-utility：基础设施工具类模块
-- customer-system：客服系统单体工程
-- outsouring-system：各个外包客服系统工程
-- custemsystem-basic：一些理论知识和基础补充
+| 模块名                    | 描述                     |
+| ------------------------- | ------------------------ |
+| cs-dependency             | 统一依赖管理             |
+| cs-infrastructure-utility | 基础设施工具类           |
+| customer-service          | 客服核心服务             |
+| integration-service       | 集成服务                 |
+| outsouring-system         | 外包客服系统             |
+| cs-admin-server           | Spring Boot Admin 管控台 |
+| customer-system-theory    | 一些补充的理论基础       |
 
+
+
+### 客服平台 EIP 集成架构模式
+
+![](docs/客服平台 EIP 集成架构模式.png)
+
+### 客服平台 EIP 组件交互流程
+
+![](docs/客服平台 EIP 组件交互流程.png)
