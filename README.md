@@ -14,6 +14,10 @@
 | cs-admin-server           | Spring Boot Admin 管控台 |
 | customer-system-theory    | 一些补充的理论基础       |
 
+### 客服平台顶层用例
+
+![客服平台顶层用例](docs/客服平台顶层用例.png)
+
 
 
 ### 客服平台 EIP 集成架构模式
