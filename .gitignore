@@ -23,5 +23,4 @@ logs/
 *.lnk
 pom.xml.versionsBackup
 .idea
-/docs/
 
