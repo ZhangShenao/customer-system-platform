@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 	<groupId>william</groupId>
-    <artifactId>custem-system-platform</artifactId>
+    <artifactId>customer-system-platform</artifactId>
     <version>0.0.1-snapshot</version>
     <packaging>pom</packaging>
 
