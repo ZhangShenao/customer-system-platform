@@ -7,6 +7,7 @@ import william.cs.entity.tenant.OutsourcingSystem;
 import william.cs.servicebus.endpoint.CustomerStaffEndpoint;
 import william.cs.servicebus.filter.chain.CustomerStaffFilterChain;
 import william.cs.servicebus.filter.impl.StaffNameNotEmptyFilter;
+import william.cs.servicebus.filter.impl.StaffNameSensitiveWordFilter;
 import william.cs.servicebus.router.OutsourcingCustomerSystemRouter;
 import william.cs.servicebus.router.OutsourcingCustomerSystemRouterFactory;
 import william.cs.servicebus.transformer.OutsourcingCustomerStaffTransformer;
@@ -36,7 +37,8 @@ public class DefaultCustomerStaffEndpointImpl implements CustomerStaffEndpoint {
     public void init() {
         //构造过滤器链
         filterChain = new CustomerStaffFilterChain();
-        filterChain.addFilter(new StaffNameNotEmptyFilter());
+        filterChain.addFilter(new StaffNameNotEmptyFilter());   //空姓名过滤器
+        filterChain.addFilter(new StaffNameSensitiveWordFilter("杭州")); //姓名敏感词过滤器
     }
     
     @Override
