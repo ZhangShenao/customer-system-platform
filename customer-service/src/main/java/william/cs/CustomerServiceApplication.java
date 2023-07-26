@@ -1,6 +1,7 @@
 package william.cs;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Slf4j
 @SpringBootApplication
 @MapperScan("william.cs.mapper")
+@EnableDubbo    //启用Dubbo
 public class CustomerServiceApplication {
+    
     public static void main(String[] args) {
         SpringApplication.run(CustomerServiceApplication.class, args);
         log.info("*************************************************************");
