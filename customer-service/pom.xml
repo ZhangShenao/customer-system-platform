@@ -16,7 +16,7 @@
     <dependencies>
         
         <dependency>
-            <groupId>org.geekbang.projects</groupId>
+            <groupId>william</groupId>
             <artifactId>cs-infrastructure-utility</artifactId>
             <version>0.0.1-snapshot</version>
             <scope>compile</scope>
@@ -187,6 +187,36 @@
         <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
+        </dependency>
+        
+        <!--Dubbo相关依赖-->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-dependencies-zookeeper</artifactId>
+            <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--替换curator默认版本，确保和Zookeeper服务器兼容-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        
+        <!--内部SDK依赖-->
+        <dependency>
+            <groupId>william</groupId>
+            <artifactId>customer-system-sdk</artifactId>
+            <version>0.0.1-snapshot</version>
         </dependency>
     </dependencies>
     

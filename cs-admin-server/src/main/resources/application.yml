@@ -9,7 +9,7 @@ management:
 
 logging:
     level:
-      org.geekbang.projects.cs: INFO
+      william.cs.admin.server: INFO
 
 #spring:
 #  security:

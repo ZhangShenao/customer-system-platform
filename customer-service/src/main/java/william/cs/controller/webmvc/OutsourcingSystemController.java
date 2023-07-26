@@ -4,8 +4,8 @@ import william.cs.controller.vo.req.AddOutsourcingSystemReqVO;
 import william.cs.controller.vo.resp.OutsourcingSystemRespVO;
 import william.cs.converter.OutsourcingSystemConverter;
 import william.cs.entity.tenant.OutsourcingSystem;
-import org.geekbang.projects.cs.infrastructure.page.PageObject;
-import org.geekbang.projects.cs.infrastructure.vo.Result;
+import william.cs.infrastructure.page.PageObject;
+import william.cs.infrastructure.vo.Result;
 import william.cs.service.IOutsourcingSystemService;
 import org.springframework.web.bind.annotation.*;
 

@@ -7,9 +7,9 @@ import com.customer.beijing.converter.BeijingCustomerStaffConverter;
 import com.customer.beijing.entity.BeijingCustomerStaff;
 import com.customer.beijing.service.BeijingCustomerStaffService;
 import lombok.extern.slf4j.Slf4j;
-import org.geekbang.projects.cs.infrastructure.vo.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import william.cs.infrastructure.vo.Result;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,41 +18,46 @@ import java.util.List;
 @RestController
 @RequestMapping("/customerStaffs/beijing/")
 public class BeijingCustomerStaffController {
-
+    
     @Resource
     private BeijingCustomerStaffService customerStaffService;
-
+    
     @PostMapping("/")
-    public Result<Long> addCustomerStaff(@RequestBody @Validated BeijingCustomerStaffCreateReqVO customerStaffCreateReqVO) {
-        BeijingCustomerStaff customerStaff = BeijingCustomerStaffConverter.INSTANCE.convertCreateReq(customerStaffCreateReqVO);
-
+    public Result<Long> addCustomerStaff(
+            @RequestBody @Validated BeijingCustomerStaffCreateReqVO customerStaffCreateReqVO) {
+        BeijingCustomerStaff customerStaff = BeijingCustomerStaffConverter.INSTANCE.convertCreateReq(
+                customerStaffCreateReqVO);
+        
         return Result.success(customerStaffService.createCustomerStaff(customerStaff));
     }
-
+    
     @PutMapping("/")
-    public Result<Boolean> updateCustomerStaff(@RequestBody @Validated BeijingCustomerStaffUpdateReqVO customerStaffUpdateReqVO) {
-        BeijingCustomerStaff customerStaff = BeijingCustomerStaffConverter.INSTANCE.convertUpdateReq(customerStaffUpdateReqVO);
-
+    public Result<Boolean> updateCustomerStaff(
+            @RequestBody @Validated BeijingCustomerStaffUpdateReqVO customerStaffUpdateReqVO) {
+        BeijingCustomerStaff customerStaff = BeijingCustomerStaffConverter.INSTANCE.convertUpdateReq(
+                customerStaffUpdateReqVO);
+        
         return Result.success(customerStaffService.updateCustomerStaff(customerStaff));
     }
-
+    
     @DeleteMapping("/")
-    public Result<Boolean> deleteCustomerStaff(@RequestParam ("id") Long id) {
+    public Result<Boolean> deleteCustomerStaff(@RequestParam("id") Long id) {
         return Result.success(customerStaffService.deleteCustomerStaffById(id));
     }
-
+    
     @GetMapping("/")
     public Result<List<BeijingCustomerStaffRespVO>> getAllCustomerStaffs() {
         List<BeijingCustomerStaff> customerStaffs = customerStaffService.findAllCustomerStaffs();
-
+        
         return Result.success(BeijingCustomerStaffConverter.INSTANCE.convertListResp(customerStaffs));
     }
-
+    
     @GetMapping("/updated")
-    public Result<List<BeijingCustomerStaffRespVO>> getCustomerStaffsByUpdatedTime(@RequestParam ("updatedTime") Long updatedTime) {
-
+    public Result<List<BeijingCustomerStaffRespVO>> getCustomerStaffsByUpdatedTime(
+            @RequestParam("updatedTime") Long updatedTime) {
+        
         List<BeijingCustomerStaff> customerStaffs = customerStaffService.findCustomerStaffsByUpdatedTime(updatedTime);
-
+        
         return Result.success(BeijingCustomerStaffConverter.INSTANCE.convertListResp(customerStaffs));
     }
 }

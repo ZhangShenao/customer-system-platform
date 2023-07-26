@@ -2,7 +2,7 @@ package william.cs.controller.vo.req;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import william.cs.entity.staff.enums.Gender;
+import william.cs.sdk.constants.Gender;
 
 @Data
 @Accessors(chain = true)
