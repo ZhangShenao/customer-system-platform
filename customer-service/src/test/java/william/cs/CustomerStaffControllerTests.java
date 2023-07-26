@@ -1,7 +1,7 @@
 package william.cs;
 
-import william.cs.entity.staff.CustomerStaff;
-import william.cs.service.ICustomerStaffService;
+import william.customer.system.entity.staff.CustomerStaff;
+import william.customer.system.service.ICustomerStaffService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

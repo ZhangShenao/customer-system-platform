@@ -1,6 +1,6 @@
 package william.cs;
 
-import william.cs.metrics.CustomerStaffCounter;
+import william.customer.system.metrics.CustomerStaffCounter;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -7,11 +7,11 @@
     <packaging>pom</packaging>
 
     <modules>
-		<module>cs-dependency</module>
+		<module>customer-system-dependency</module>
 		<module>customer-service</module>
-		<module>outsouring-system</module>
-        <module>cs-infrastructure-utility</module>
-        <module>cs-admin-server</module>
+		<module>outsourcing-system</module>
+        <module>customer-system-infrastructure-utility</module>
+        <module>customer-system-admin-server</module>
         <module>customer-system-theory</module>
         <module>integration-service</module>
         <module>customer-system-sdk</module>
