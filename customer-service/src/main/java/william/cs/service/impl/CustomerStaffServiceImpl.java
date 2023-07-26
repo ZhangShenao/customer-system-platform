@@ -8,17 +8,17 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import william.cs.entity.staff.CustomerStaff;
 import william.cs.entity.tenant.OutsourcingSystem;
-import org.geekbang.projects.cs.infrastructure.exception.BizException;
-import org.geekbang.projects.cs.infrastructure.page.PageObject;
+import william.cs.infrastructure.exception.BizException;
+import william.cs.infrastructure.page.PageObject;
 import william.cs.mapper.CustomerStaffMapper;
 import william.cs.service.ICustomerStaffService;
 import william.cs.service.IOutsourcingSystemService;
-import william.cs.servicebus.endpoint.CustomerStaffEndpoint;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -29,9 +29,6 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     
     @Resource
     private IOutsourcingSystemService outsourcingSystemService;
-    
-    @Resource
-    private CustomerStaffEndpoint customerStaffEndpoint;
     
     @Override
     @DS("beijing")   //指定动态数据源
@@ -117,10 +114,11 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
             return;
         }
         
-        //根据租户远程获取客服信息
-        Collection<CustomerStaff> customerStaffs = customerStaffEndpoint.fetchOutsourcingCustomerStaffs(
-                outsourcingSystem);
+        //TODO 根据租户远程获取客服信息
+        //        Collection<CustomerStaff> customerStaffs = customerStaffEndpoint.fetchOutsourcingCustomerStaffs(
+        //                outsourcingSystem);
         
+        Collection<CustomerStaff> customerStaffs = Collections.emptyList();
         if (CollectionUtils.isEmpty(customerStaffs)) {
             log.warn("Sync Outsourcing Customer Staffs Empty! systemId: {}", systemId);
             return;

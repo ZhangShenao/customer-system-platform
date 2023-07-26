@@ -23,7 +23,7 @@ public class LogAspect {
     /**
      * 切面表达式  此次切面为service的实现类
      */
-    @Pointcut("execution(* org.geekbang.projects.cs.*.service.*.impl.*.*(..))")
+    @Pointcut("execution(* william.cs.*.service.*.impl.*.*(..))")
     public void logPointcut() {
 
     }

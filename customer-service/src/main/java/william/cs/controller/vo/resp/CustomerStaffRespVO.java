@@ -2,8 +2,8 @@ package william.cs.controller.vo.resp;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import william.cs.entity.staff.enums.Gender;
-import william.cs.entity.staff.enums.Status;
+import william.cs.sdk.constants.Gender;
+import william.cs.sdk.constants.Status;
 
 import java.time.LocalDateTime;
 

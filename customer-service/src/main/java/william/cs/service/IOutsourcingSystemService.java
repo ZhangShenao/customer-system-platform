@@ -1,7 +1,7 @@
 package william.cs.service;
 
 import william.cs.entity.tenant.OutsourcingSystem;
-import org.geekbang.projects.cs.infrastructure.page.PageObject;
+import william.cs.infrastructure.page.PageObject;
 
 import java.util.List;
 

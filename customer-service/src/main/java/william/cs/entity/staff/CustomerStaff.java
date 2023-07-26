@@ -7,8 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import william.cs.entity.staff.enums.Gender;
-import william.cs.entity.staff.enums.Status;
+import william.cs.sdk.constants.Gender;
+import william.cs.sdk.constants.Status;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

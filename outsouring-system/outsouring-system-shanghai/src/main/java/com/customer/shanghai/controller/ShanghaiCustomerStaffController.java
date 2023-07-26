@@ -7,9 +7,9 @@ import com.customer.shanghai.converter.ShanghaiCustomerStaffConverter;
 import com.customer.shanghai.entity.ShanghaiCustomerStaff;
 import com.customer.shanghai.service.ShanghaiCustomerStaffService;
 import lombok.extern.slf4j.Slf4j;
-import org.geekbang.projects.cs.infrastructure.vo.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import william.cs.infrastructure.vo.Result;
 
 import javax.annotation.Resource;
 import java.util.List;

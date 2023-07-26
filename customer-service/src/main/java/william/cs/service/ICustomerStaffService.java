@@ -1,8 +1,8 @@
 package william.cs.service;
 
 import william.cs.entity.staff.CustomerStaff;
-import org.geekbang.projects.cs.infrastructure.exception.BizException;
-import org.geekbang.projects.cs.infrastructure.page.PageObject;
+import william.cs.infrastructure.exception.BizException;
+import william.cs.infrastructure.page.PageObject;
 
 import java.util.List;
 

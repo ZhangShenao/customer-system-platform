@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import william.cs.entity.tenant.OutsourcingSystem;
-import org.geekbang.projects.cs.infrastructure.page.PageObject;
+import william.cs.infrastructure.page.PageObject;
 import william.cs.mapper.OutsourcingSystemMapper;
 import william.cs.service.IOutsourcingSystemService;
 import org.springframework.stereotype.Service;

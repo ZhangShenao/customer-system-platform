@@ -14,9 +14,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.geekbang.projects</groupId>
+            <groupId>william</groupId>
             <artifactId>cs-infrastructure-utility</artifactId>
-            <version>${project.parent.version}</version>
+            <version>0.0.1-snapshot</version>
         </dependency>
 
         <dependency>
