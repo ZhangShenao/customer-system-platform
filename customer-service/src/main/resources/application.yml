@@ -81,6 +81,26 @@ xxl:
       logpath: /Users/zhangshenao/apps/xxl-job/executor-logs
       logretentiondays: 30
 
+#Dubbo相关配置
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    file: /Users/zhangshenao/apps/Dubbo/middle-service/cache
+  scan:
+    base-packages: william.cs.rpc
+
+#Dubbo服务版本管理
+integration:
+  service:
+    version: 1.0.0
+
+customer:
+  service:
+    version: 1.0.0
+
 ---
 #指定Admin Server地址,进行监控指标上报
 spring:

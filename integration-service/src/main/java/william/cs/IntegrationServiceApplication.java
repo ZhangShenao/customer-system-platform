@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @Slf4j
 @SpringBootApplication
-@EnableDubbo    //开启Dubbo服务
+@EnableDubbo    //启用Dubbo
 public class IntegrationServiceApplication {
     
     public static void main(String[] args) {
