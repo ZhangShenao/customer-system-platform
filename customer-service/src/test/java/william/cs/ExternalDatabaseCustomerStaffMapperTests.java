@@ -1,8 +1,8 @@
 package william.cs;
 
 import com.baomidou.mybatisplus.test.autoconfigure.MybatisPlusTest;
-import william.cs.entity.staff.CustomerStaff;
-import william.cs.mapper.CustomerStaffMapper;
+import william.customer.system.entity.staff.CustomerStaff;
+import william.customer.system.mapper.CustomerStaffMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

@@ -13,10 +13,10 @@
     <artifactId>integration-service</artifactId>
     
     <dependencies>
-        
+    
         <dependency>
             <groupId>william</groupId>
-            <artifactId>cs-infrastructure-utility</artifactId>
+            <artifactId>customer-system-infrastructure-utility</artifactId>
             <version>0.0.1-snapshot</version>
             <scope>compile</scope>
         </dependency>

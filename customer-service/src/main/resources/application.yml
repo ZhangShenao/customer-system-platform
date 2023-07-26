@@ -90,7 +90,7 @@ dubbo:
     address: zookeeper://127.0.0.1:2181
     file: /Users/zhangshenao/apps/Dubbo/middle-service/cache
   scan:
-    base-packages: william.cs.rpc
+    base-packages: william.customer.system.rpc
 
 #Dubbo服务版本管理
 integration:
