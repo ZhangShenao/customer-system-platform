@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import william.customer.system.client.OutsourcingSystemIntegrationClient;
 import william.customer.system.entity.staff.CustomerStaff;
 import william.customer.system.entity.tenant.OutsourcingSystem;
 import william.customer.system.infrastructure.exception.BizException;
@@ -18,7 +19,6 @@ import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -29,6 +29,9 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     
     @Resource
     private IOutsourcingSystemService outsourcingSystemService;
+    
+    @Resource
+    private OutsourcingSystemIntegrationClient outsourcingSystemIntegrationClient;
     
     @Override
     @DS("beijing")   //指定动态数据源
@@ -114,11 +117,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
             return;
         }
         
-        //TODO 根据租户远程获取客服信息
-        //        Collection<CustomerStaff> customerStaffs = customerStaffEndpoint.fetchOutsourcingCustomerStaffs(
-        //                outsourcingSystem);
-        
-        Collection<CustomerStaff> customerStaffs = Collections.emptyList();
+        Collection<CustomerStaff> customerStaffs = outsourcingSystemIntegrationClient.fetchCustomerStaffsFromOutsourcingSystem(outsourcingSystem);
         if (CollectionUtils.isEmpty(customerStaffs)) {
             log.warn("Sync Outsourcing Customer Staffs Empty! systemId: {}", systemId);
             return;

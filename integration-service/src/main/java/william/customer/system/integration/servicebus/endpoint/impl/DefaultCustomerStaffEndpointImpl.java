@@ -38,7 +38,7 @@ public class DefaultCustomerStaffEndpointImpl implements CustomerStaffEndpoint {
         //构造过滤器链
         filterChain = new CustomerStaffFilterChain();
         filterChain.addFilter(new StaffNameNotEmptyFilter());   //空姓名过滤器
-        filterChain.addFilter(new StaffNameSensitiveWordFilter("杭州")); //姓名敏感词过滤器
+        //        filterChain.addFilter(new StaffNameSensitiveWordFilter("杭州")); //姓名敏感词过滤器
     }
     
     @Override
