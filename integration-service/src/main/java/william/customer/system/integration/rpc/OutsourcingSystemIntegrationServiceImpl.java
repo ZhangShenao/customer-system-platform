@@ -14,7 +14,8 @@ import java.util.Collection;
  * @date 2023/7/26 3:14 PM
  * @description: 外包系统集成服务实现
  */
-@DubboService(version = "${integration.service.version}")   //发布Dubbo服务,并进行版本管理
+//发布Dubbo服务,并指定Group和Version
+@DubboService(group = "${spring.application.name}", version = "${integration.service.version}")
 public class OutsourcingSystemIntegrationServiceImpl implements OutsourcingSystemIntegrationService {
     
     @Resource

@@ -1,4 +1,4 @@
-package william.customer.system.integration.config;
+package william.customer.system.config;
 
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 import org.springframework.beans.factory.annotation.Value;
