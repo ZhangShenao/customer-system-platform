@@ -9,6 +9,7 @@ public class HangzhouCustomerStaffUpdateReqVO {
 
     private Long id;
     private String nickname;
+    private String gender;
     private String avatar;
     private String goodAt;
     private String remark;

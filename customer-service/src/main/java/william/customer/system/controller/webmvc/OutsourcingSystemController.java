@@ -22,7 +22,7 @@ public class OutsourcingSystemController {
     @Resource
     private IOutsourcingSystemService outsourcingSystemService;
     
-    //外包客服入驻
+    //外包客服系统入驻
     @PostMapping("/")
     public Result<Long> addOutsourcingSystem(@RequestBody AddOutsourcingSystemReqVO addOutsourcingSystemReqVO) {
         
