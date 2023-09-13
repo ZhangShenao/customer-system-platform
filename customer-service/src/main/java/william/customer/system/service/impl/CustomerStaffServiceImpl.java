@@ -34,7 +34,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     private OutsourcingSystemIntegrationClient outsourcingSystemIntegrationClient;
     
     @Override
-    @DS("beijing")   //指定动态数据源
+    @DS("master")   //指定动态数据源
     public PageObject<CustomerStaff> findCustomerStaffs(Long pageSize, Long pageIndex) {
         LambdaQueryWrapper<CustomerStaff> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.orderByDesc(CustomerStaff::getCreateTime);
@@ -42,7 +42,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     }
     
     @Override
-    @DS("beijing")   //指定动态数据源
+    @DS("master")   //指定动态数据源
     public List<CustomerStaff> findCustomerStaffs() {
         LambdaQueryWrapper<CustomerStaff> queryWrapper = new LambdaQueryWrapper<>();
         return baseMapper.selectList(queryWrapper);

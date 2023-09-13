@@ -19,47 +19,55 @@ import java.util.List;
 @RestController
 @RequestMapping("/customerStaffs/hangzhou/")
 public class HangzhouCustomerStaffController {
-    
+
     @Resource
     private HangzhouCustomerStaffService customerStaffService;
-    
+
     @PostMapping("/")
     public Result<HangzhouCustomerStaffRespVO> addCustomerStaff(
             @RequestBody @Validated HangzhouCustomerStaffCreateReqVO customerStaffCreateReqVO) {
         HangzhouCustomerStaff customerStaff = HangzhouCustomerStaffConverter.INSTANCE.convertCreateReq(
                 customerStaffCreateReqVO);
-        
+        Date now = new Date();
+        customerStaff.setIsDeleted(false);
+        customerStaff.setCreatedAt(now);
+        customerStaff.setUpdatedAt(now);
+
         return Result.success(customerStaffService.createCustomerStaff(customerStaff));
     }
-    
+
     @PutMapping("/")
     public Result<HangzhouCustomerStaffRespVO> updateCustomerStaff(
             @RequestBody @Validated HangzhouCustomerStaffUpdateReqVO doctorUpdateReqVO) {
         HangzhouCustomerStaff customerStaff = HangzhouCustomerStaffConverter.INSTANCE.convertUpdateReq(
                 doctorUpdateReqVO);
-        
+        Date now = new Date();
+        customerStaff.setIsDeleted(false);
+        customerStaff.setCreatedAt(now);
+        customerStaff.setUpdatedAt(now);
+
         return Result.success(customerStaffService.updateCustomerStaff(customerStaff));
     }
-    
+
     @DeleteMapping("/")
     public Result<HangzhouCustomerStaffRespVO> deleteCustomerStaff(@RequestParam("id") Long id) {
         return Result.success(customerStaffService.deleteCustomerStaffById(id));
     }
-    
+
     @GetMapping("/")
     public Result<List<HangzhouCustomerStaffRespVO>> getAllCustomerStaffs() {
         List<HangzhouCustomerStaff> customerStaffs = customerStaffService.findAllCustomerStaffs();
-        
+
         return Result.success(HangzhouCustomerStaffConverter.INSTANCE.convertListResp(customerStaffs));
     }
-    
+
     @GetMapping("/updated")
     public Result<HangzhouCustomerStaffRespVO> getCustomerStaffsByUpdatedTime(
             @RequestParam("updatedTime") Long updatedTime) {
         Date updatedTimeForQuery = new Date(updatedTime);
         List<HangzhouCustomerStaff> customerStaffs = customerStaffService.findCustomerStaffsByUpdatedTime(
                 updatedTimeForQuery);
-        
+
         return Result.success(HangzhouCustomerStaffConverter.INSTANCE.convertListResp(customerStaffs));
     }
 }
